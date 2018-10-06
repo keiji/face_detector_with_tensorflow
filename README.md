@@ -1,6 +1,17 @@
 # FaceDetector with TensorFlow
 
 ## Description
+2018年10月8日池袋サンシャインで開催される技術系同人誌オンリーイベント「技術書典5」で頒布予定のTensorFlow本「Liteな期待が重すぎる！」のサンプルプロジェクトです。
+
+![表紙画像](https://blog.keiji.io/wp-content/uploads/2018/10/Lite_B5_hyoushi_4mm_1002_86-KB.jpg)
+
+|タイトル|Liteな期待が重すぎる！ （茶色いトイプーは食べ物じゃないっ!?）|
+|:---|:---|
+|判型|B5 PDF|
+|ページ数|本文60p|
+|頒布価格|1,000円|
+|発行|めがねをかけるんだ|
+|配置|え33|
 
 ## Install app
 You can download the APK file from [release page](https://github.com/keiji/face_detector_with_tensorflow/releases/latest).
