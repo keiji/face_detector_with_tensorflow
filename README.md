@@ -9,6 +9,12 @@ You can download the APK file from [release page](https://github.com/keiji/face_
 The TensorFlow model file(`food_model_4ch.pb`) is not packaged in the repo because of their size.
 You can download the from [release page](https://github.com/keiji/face_detector_with_tensorflow/releases/latest) to the assets directory in the source tree.
 
+## Dataset
+ * Images: http://cocodataset.org/
+ * Annotations: https://github.com/keiji/cocodataset-face-annotations
+
+## License
+
 ```
 Copyright 2017 The Android Open Source Project
 
