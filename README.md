@@ -1,6 +1,9 @@
 # FaceDetector with TensorFlow
 
 ## Description
+[技術書典5](https://techbookfest.org/circle/47000001)で頒布した技術同人誌「Liteな期待が重すぎる」で解説しているソースコードをすべてまとめてあります。
+
+ * [Liteな期待が重すぎる！](https://keiji.booth.pm/items/1043447) - BOOTH
 
 ## Install app
 You can download the APK file from [release page](https://github.com/keiji/face_detector_with_tensorflow/releases/latest).
