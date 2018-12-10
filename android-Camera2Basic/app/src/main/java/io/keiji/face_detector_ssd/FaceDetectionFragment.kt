@@ -29,8 +29,8 @@ class FaceDetectionFragment : Camera2BasicFragment() {
     override fun onStart() {
         super.onStart()
 
-        ssdFaceDetector = SsdFaceDetector(context!!.assets, 0.99F)
-//        ssdFaceDetector = SsdFaceDetectorMobile(context!!.assets, 0.99F)
+        ssdFaceDetector = SsdFaceDetector(context!!.assets, 0.9F)
+//        ssdFaceDetector = SsdFaceDetectorMobile(context!!.assets, 0.9F)
     }
 
     override fun onStop() {

@@ -23,12 +23,10 @@ import android.os.Debug
 import android.util.Log
 import org.json.JSONArray
 import org.tensorflow.lite.Interpreter
-import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 import java.io.InputStreamReader
 import java.nio.ByteBuffer
-import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 import java.util.*
 
@@ -65,7 +63,7 @@ class SsdFaceDetector(assetManager: AssetManager,
 
     @Throws(IOException::class)
     private fun loadModelFile(assets: AssetManager,
-                              modelFileName: String): MappedByteBuffer {
+                              modelFileName: String): ByteBuffer {
         val fileDescriptor = assets.openFd(modelFileName)
         val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
 
@@ -76,7 +74,7 @@ class SsdFaceDetector(assetManager: AssetManager,
         return fileChannel.map(
                 FileChannel.MapMode.READ_ONLY,
                 startOffset, declaredLength
-        )
+        ).asReadOnlyBuffer()
     }
 
     private val boxes: Array<Box>
@@ -96,9 +94,10 @@ class SsdFaceDetector(assetManager: AssetManager,
         resultMap = mapOf(Pair(0, resultOffset), Pair(1, resultConfidence))
 
         val mappedByteBuffer = loadModelFile(assetManager, MODEL_FILE_NAME)
-        tfInterpreter = Interpreter(mappedByteBuffer, NUM_THREADS).apply {
-            setUseNNAPI(false)
-        }
+        tfInterpreter = Interpreter(mappedByteBuffer, Interpreter.Options().also {
+            it.setNumThreads(NUM_THREADS)
+            it.setUseNNAPI(false)
+        })
     }
 
     private fun loadBoxes(assetManager: AssetManager, jsonFileName: String): Array<Box> {
